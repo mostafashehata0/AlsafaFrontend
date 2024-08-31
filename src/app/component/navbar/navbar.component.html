@@ -1,0 +1,56 @@
+<div>
+  <nav
+    [class.scrolled]="navbarScrolled"
+    class="navbar fixed-top navbar-expand-lg navbar-light not-homepage"
+  >
+    <div class="container-fluid">
+      <a
+        class="navbar-brand"
+        style="font-size: 40px; font-weight: bold"
+        href="#"
+      >
+        <img
+          style="width: 130px; border-radius: 45%"
+          src="assets/صورة واتساب بتاريخ 2024-08-28 في 05.22.42_25469ef4.jpg"
+          alt=""
+        />
+        <span style="color: #e81c2a; margin-inline-start: 10px">AL</span>
+        <span style="color: white">SA</span>
+        <span style="color: #e81c2a">FA</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        style="color: #e81c2a"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-5">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/news">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

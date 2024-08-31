@@ -1,0 +1,46 @@
+<!-- <div *ngFor="let new of data; let i = index">
+  <h1>{{ new.title.en }}</h1>
+  <img style="width: 200px" src="{{ new.image[0]?.asset?.url }}" alt="" />
+  <p>{{ new.description.en }}</p>
+</div> -->
+
+<!-- ================== -->
+<!-- <p>You can set specific index to start from it</p> -->
+<carousel
+  style="position: relative; top: 90px"
+  [itemsPerSlide]="itemsPerSlide"
+  [singleSlideOffset]="singleSlideOffset"
+  [startFromIndex]="6"
+  [interval]="3000"
+>
+  <slide *ngFor="let slide of slides; let index = index">
+    <div class="swiper-slide">
+      <div class="card" style="width: 14rem">
+        <img
+          [src]="slide.image"
+          alt="image slide"
+          style="display: block; width: 223px; height: 256.3px"
+        />
+        <div class="carousel-caption"></div>
+        <!-- <img src="assets/img/17.jpg" style="width: 192px" alt="" /> -->
+        <div class="card-body">
+          <!-- <h5 class="card-title">Project Name</h5> -->
+          <p class="card-text">
+            Some quick example text to build on the card title and
+          </p>
+          <a
+            href="#"
+            class="btn"
+            style="
+              background-color: #e81c2a;
+              color: white;
+              display: block;
+              margin: auto;
+            "
+            >Go To New</a
+          >
+        </div>
+      </div>
+    </div>
+  </slide>
+</carousel>

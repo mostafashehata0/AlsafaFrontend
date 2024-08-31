@@ -1,0 +1,26 @@
+.carousel-container {
+  position: relative;
+}
+
+.carousel-container::before {
+  content: "";
+  background: color-mix(in srgb, #252525c7, transparent 30%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.caption-container {
+  position: absolute;
+  bottom: 0; /* Adjust this value as needed */
+  width: 100%;
+  text-align: center;
+  z-index: 3; /* Higher than the ::before pseudo-element */
+}
+h3 {
+  position: relative;
+  bottom: 250px;
+  font-size: 56px;
+  color: white;
+  z-index: 9999999;
+}

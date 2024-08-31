@@ -1,0 +1,39 @@
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: red;
+  background-clip: padding-box;
+  border: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+  position: relative;
+  top: 100px;
+  border-radius: 50%;
+}
+
+carousel .swiper-slide img {
+  opacity: 0.7;
+  transition: 0.3s;
+  /* filter: grayscale(100); */
+  height: 150px;
+  width: 300px;
+}
+
+carousel .swiper-slide img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+carousel .swiper-wrapper {
+  height: auto;
+  /* width: 200px; */
+}
