@@ -53,7 +53,6 @@ export class SanityService {
     return this.client
       .fetch(query)
       .then((data: any) => {
-        console.log('Fetched News data:', data);
         return data;
       })
       .catch((error: any) => {

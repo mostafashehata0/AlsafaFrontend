@@ -1,3 +1,23 @@
+carousel {
+  position: relative;
+  top: 150px;
+  display: grid;
+  place-content: center;
+  margin-bottom: 250px;
+}
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  /* margin-right: 15%; */
+  /* margin-bottom: 1rem; */
+  /* margin-left: 15%; */
+}
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
   flex: 0 1 auto;
@@ -8,16 +28,21 @@
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: red;
+  background-color: #e81c2a;
   background-clip: padding-box;
   border: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  opacity: 0.5;
-  transition: opacity 0.6s ease;
+  /* opacity: 0.5;
+  transition: opacity 0.6s ease; */
   position: relative;
   top: 100px;
   border-radius: 50%;
+}
+
+carousel .card {
+  width: 16rem;
+  margin-inline-start: 15px;
 }
 
 carousel .swiper-slide img {
@@ -25,8 +50,36 @@ carousel .swiper-slide img {
   transition: 0.3s;
   /* filter: grayscale(100); */
   height: 150px;
-  width: 300px;
+  display: block;
+  width: 256px;
+  height: 256.3px;
 }
+/* =================== at max width 1200px====================== */
+@media (max-width: 1200px) {
+  carousel .card {
+    width: 14rem;
+  }
+
+  carousel .swiper-slide img {
+    width: 224px;
+  }
+}
+/* =================== at max width 800px====================== */
+@media (max-width: 800px) {
+  carousel {
+    display: grid;
+    place-content: center;
+  }
+  carousel .card {
+    width: 16rem;
+    margin-inline-start: 15px;
+  }
+
+  carousel .swiper-slide img {
+    width: 256px;
+  }
+}
+/* =================== at max width 600px====================== */
 
 carousel .swiper-slide img:hover {
   filter: none;
@@ -35,5 +88,30 @@ carousel .swiper-slide img:hover {
 
 carousel .swiper-wrapper {
   height: auto;
-  /* width: 200px; */
+}
+/*============================ project modal===================== */
+.modal-body div {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 10px;
+  align-items: center;
+}
+.project-image {
+  width: 500px;
+  height: 550px;
+}
+@media (max-width: 1000px) {
+  .modal-body div {
+    display: block;
+  }
+  .project-image {
+    width: 250px;
+    height: 340px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .modal-body div p {
+    margin-top: 10px;
+  }
 }

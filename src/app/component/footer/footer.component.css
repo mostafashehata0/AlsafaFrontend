@@ -177,3 +177,16 @@ a:hover {
   margin-top: 5px;
   font-size: 13px;
 }
+
+@media (max-width: 600px) {
+  .information .footer-about,
+  .information .footer-links {
+    width: 60%;
+    margin: auto;
+    margin-top: 15px;
+  }
+  .information img {
+    position: relative;
+    left: 20%;
+  }
+}

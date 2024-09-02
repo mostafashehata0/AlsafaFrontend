@@ -1,3 +1,24 @@
+.container-fluid .navbar-brand {
+  font-size: 40px;
+  font-weight: bold;
+}
+.container-fluid a img {
+  width: 130px;
+  border-radius: 45%;
+  -webkit-border-radius: 45%;
+  -moz-border-radius: 45%;
+  -ms-border-radius: 45%;
+  -o-border-radius: 45%;
+}
+@media (max-width: 400px) {
+  .container-fluid a img {
+    width: 80px;
+  }
+  .container-fluid .navbar-brand {
+    font-size: 32px;
+    margin-inline-end: 0;
+  }
+}
 .navbar-brand {
   margin-inline-start: 80px;
 }

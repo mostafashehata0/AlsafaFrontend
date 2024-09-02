@@ -1,3 +1,4 @@
+<!-- ===============start landing section=============== -->
 <div class="carousel-caption d-sm-block d-md-block">
   <h3>ALSAFA ADVANCED SYSTEM</h3>
 </div>
@@ -26,3 +27,41 @@
     </slide>
   </carousel>
 </div>
+<!-- ===============End landing section=============== -->
+<!-- ============start our projects================ -->
+<ng-container *ngIf="showCarousel">
+  <h2 style="position: relative; top: 130px; text-align: center">News Page</h2>
+  <carousel
+    class="project-section"
+    [itemsPerSlide]="slidesNumber"
+    [singleSlideOffset]="singleSlideOffset"
+    [startFromIndex]="6"
+    [interval]="3000"
+  >
+    <slide *ngFor="let slide of slides; let index = index">
+      <div class="swiper-slide">
+        <div class="card">
+          <img [src]="slide.image" alt="image slide" />
+          <div class="carousel-caption"></div>
+          <div class="card-body">
+            <p class="card-text text-center fw-bold">our project</p>
+            <button
+              type="button"
+              class="btn"
+              style="
+                background-color: #e81c2a;
+                color: white;
+                display: block;
+                margin: auto;
+                padding: 10px;
+              "
+            >
+              See The New
+            </button>
+          </div>
+        </div>
+      </div>
+    </slide>
+  </carousel>
+</ng-container>
+<!-- ============End our projects================ -->

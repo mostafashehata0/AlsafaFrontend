@@ -8,12 +8,13 @@ import { CustomersComponent } from './component/customers/customers.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './component/home/home.component';
 import { AboutComponent } from './component/about/about.component';
-import { ServicesComponent } from './component/services/services.component';
+import { ServicesComponent } from './component/ourServices/services.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './component/footer/footer.component';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FooterComponent } from './component/footer/footer.component';
     CarouselModule.forRoot(),
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
