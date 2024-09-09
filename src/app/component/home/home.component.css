@@ -17,13 +17,6 @@
   text-align: center;
   z-index: 3; /* Higher than the ::before pseudo-element */
 }
-h3 {
-  position: relative;
-  bottom: 250px;
-  font-size: 56px;
-  color: white;
-  z-index: 9999999;
-}
 
 /* ========start our project========== */
 .project-section {

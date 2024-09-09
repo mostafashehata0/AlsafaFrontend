@@ -80,7 +80,6 @@ export class SanityService {
     return this.client
       .fetch(query)
       .then((newsData: any) => {
-        console.log('Fetched  clientsData:', newsData);
         return newsData;
       })
       .catch((error: any) => {

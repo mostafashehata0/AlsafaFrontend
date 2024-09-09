@@ -1,2 +1,39 @@
-<p>{{ data[0]?.title }}</p>
-<img src="{{ data[0]?.image[0].asset.url }}" alt="" />
+<ng-container *ngIf="showCarousel">
+  <h2
+    style="position: relative; top: 130px; text-align: center; margin-top: 50px"
+  >
+    Partners
+  </h2>
+  <carousel
+    class="project-section"
+    [itemsPerSlide]="slidesNumber"
+    [singleSlideOffset]="singleSlideOffset"
+    [startFromIndex]="1"
+    [interval]="3000"
+  >
+    <slide *ngFor="let partner of data; let index = index">
+      <div class="swiper-slide">
+        <div class="card">
+          <img src="{{ partner.image[0].asset.url }}" alt="image slide" />
+          <div class="carousel-caption"></div>
+          <!-- <div class="card-body">
+            <p class="card-text text-center fw-bold">our project</p>
+            <button
+              type="button"
+              class="btn"
+              style="
+                background-color: #e81c2a;
+                color: white;
+                display: block;
+                margin: auto;
+                padding: 10px;
+              "
+            >
+              See The New
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </slide>
+  </carousel>
+</ng-container>
