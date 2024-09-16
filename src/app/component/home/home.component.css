@@ -112,3 +112,86 @@
   height: auto;
 }
 /* ========End our project========== */
+/*========== start swiper============= */
+/* .flipeffect-swiper {
+  width: 200px;
+} */
+.father-of-swiper {
+  overflow: hidden;
+  width: 90%;
+  margin: auto;
+}
+.swiper-group {
+  display: flex; /* Ensure the children are aligned horizontally */
+  justify-content: space-between; /* Adds space between the swipers if desired */
+  gap: 2%; /* Adjust the gap between swipers */
+}
+
+swiper-slide img {
+  width: 200px;
+  height: 350px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow: hidden;
+}
+@media (min-width: 1000px) and (max-width: 1200px) {
+  swiper-slide img {
+    width: 180px;
+    height: 350px;
+  }
+}
+@media (min-width: 700px) and (max-width: 1000px) {
+  swiper-slide img {
+    width: 140px;
+    height: 350px;
+  }
+}
+@media (max-width: 700px) {
+  .swiper-group {
+    display: block;
+  }
+
+  .swiper-wrapper {
+    width: 200px;
+  }
+  swiper-container {
+    width: 200px;
+    height: 290px;
+    margin-top: 20px;
+    position: relative;
+    right: 80px;
+  }
+  swiper-slide img {
+    width: 200px;
+    height: 290px;
+  }
+}
+/*========== End swiper============= */
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: #e81c2a;
+}
+
+#pn_id_1 > div > div > div > div > div div div.mb-3 > img {
+  width: 300px;
+  height: 310px;
+  border-radius: 10px;
+}
+@media (max-width: 600px) {
+  #pn_id_1 > div > div > div > div > div div div.mb-3 > img {
+    width: 250px;
+    height: 260px;
+    border-radius: 10px;
+  }
+}

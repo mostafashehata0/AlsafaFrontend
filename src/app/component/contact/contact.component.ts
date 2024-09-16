@@ -16,11 +16,11 @@ export class ContactComponent {
     message: '',
     from_name: '',
     from_email: '',
-    to_email: 'zs8511337@gmail.com',
+    to_email: '',
   });
 
   send() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
     emailjs
       .send('service_j2iytsy', 'template_efthp59', {
         to_name: 'ceo',

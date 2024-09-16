@@ -22,49 +22,43 @@ export class HomeComponent {
 
   singleSlideOffset = true;
 
-  slides = [
-    { image: 'assets/Fiber-11-17-21.jpg' },
-    { image: 'assets/fiber-optic-03.jpg' },
-    { image: 'assets/constructmanagementbanner.png' },
-    { image: 'assets/Fiber-11-17-21.jpg' },
-    { image: 'assets/fiber-optic-03.jpg' },
-    { image: 'assets/constructmanagementbanner.png' },
-    { image: 'assets/Fiber-11-17-21.jpg' },
-    { image: 'assets/fiber-optic-03.jpg' },
-    { image: 'assets/constructmanagementbanner.png' },
-    { image: 'assets/Fiber-11-17-21.jpg' },
+  products: any[] = [
+    { src: '/assets/images.jpeg', info: 'construction' },
+    { src: '/assets/Telecom2_2000x1000.png', info: 'Telecommunication' },
+    {
+      src: '/assets/picture1.jpg',
+      info: 'Electricty and Alectromechanis',
+    },
+    {
+      src: '/assets/High-Density-Polyethylene-HDPE-Trenchless-Pipes-For-HDDHorizontal-Directional-Drilling-6.jpg',
+      info: 'HDD (Direciana Drilling)',
+    },
+    {
+      src: '/assets/infrastructure_montage_shutterstock.jpg',
+      info: 'Lnfrastrcture',
+    },
   ];
 
-  ngOnInit(): void {
-    this.checkScreenSize(window.innerWidth);
-  }
+  responsiveOptions: any[] | undefined;
+  ngOnInit() {
+    console.log(this.products);
 
-  constructor(private cdr: ChangeDetectorRef) {}
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.checkScreenSize(event.target.innerWidth);
-  }
-
-  checkScreenSize(width: number) {
-    if (width > 1000) {
-      this.itemsPerSlide = 4;
-    } else if (width <= 1000 && width > 800) {
-      this.itemsPerSlide = 3;
-    } else if (width <= 800 && width > 600) {
-      this.itemsPerSlide = 2;
-    } else this.itemsPerSlide = 1;
-
-    this.sendItemsPerSlide();
-  }
-
-  sendItemsPerSlide() {
-    this.slidesNumber = this.itemsPerSlide;
-
-    // Temporarily hide the carousel and then show it again to force re-render
-    this.showCarousel = false;
-    this.cdr.detectChanges(); // Ensure Angular processes this change
-    this.showCarousel = true;
-    this.cdr.detectChanges(); // Trigger change detection again
+    this.responsiveOptions = [
+      {
+        breakpoint: '1199px',
+        numVisible: 3,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
   }
 }

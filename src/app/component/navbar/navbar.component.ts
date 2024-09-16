@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,12 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
+  switchLanguge(language: string) {
+    this.translate.use(language);
+  }
   navbarScrolled = false;
   // isHomePage: boolean = false;
 

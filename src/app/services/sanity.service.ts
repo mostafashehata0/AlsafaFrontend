@@ -17,9 +17,9 @@ export class SanityService {
 
   // Method to initialize the client with the token from environment
   private initializeClient() {
-    if (!environment.sanityToken) {
-      throw new Error('Sanity token is missing in environment variables');
-    }
+    // if (!environment.sanityToken) {
+    //   throw new Error('Sanity token is missing in environment variables');
+    // }
 
     this.client = createClient({
       projectId: '94n3zxuh',
@@ -34,9 +34,9 @@ export class SanityService {
 
   // ==========================Method to fetch news data
   fetchNewsData(): Promise<any> {
-    if (!this.client) {
-      return Promise.reject('Sanity client is not initialized');
-    }
+    // if (!this.client) {
+    //   return Promise.reject('Sanity client is not initialized');
+    // }
 
     const query = `*[_type == "news"]{
       _id,
@@ -50,8 +50,7 @@ export class SanityService {
       }
     }`;
 
-    return this.client
-      .fetch(query)
+    return this.client!.fetch(query)
       .then((data: any) => {
         return data;
       })
@@ -62,9 +61,9 @@ export class SanityService {
   }
   //====================== method to featch clients data
   fetchClientsData(): Promise<any> {
-    if (!this.client) {
-      return Promise.reject('Sanity client is not initialized');
-    }
+    // if (!this.client) {
+    //   return Promise.reject('Sanity client is not initialized');
+    // }
 
     const query = `*[_type == "clients"]{
       _id,
@@ -77,8 +76,7 @@ export class SanityService {
       }
     }`;
 
-    return this.client
-      .fetch(query)
+    return this.client!.fetch(query)
       .then((newsData: any) => {
         return newsData;
       })

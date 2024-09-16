@@ -1,10 +1,87 @@
-<ng-container *ngIf="showCarousel">
-  <h2 style="position: relative; top: 130px; text-align: center">News Page</h2>
-  <carousel
+<h2 style="position: relative; top: 130px; text-align: center">News Page</h2>
+<!-- ========================= -->
+<div style="position: relative; top: 150px">
+  <p-carousel
+    [value]="data"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+    [autoplayInterval]="4500"
+  >
+    <ng-template let-new pTemplate="item">
+      <div
+        (click)="openModalWithClass(template)"
+        class="border-1 surface-border border-round m-2 text-center py-5 px-3"
+      >
+        <div class="mb-3">
+          <img
+            [src]="new.image[0]?.asset?.url"
+            [alt]="'No description available'"
+            class="w-6 shadow-2"
+          />
+        </div>
+        <div>
+          <h4 class="mb-1">{{ new.title | uppercase }}</h4>
+          <button
+            type="button"
+            class="btn"
+            style="
+              background-color: #f8303e;
+              color: white;
+              display: block;
+              margin: auto;
+              padding: 10px;
+            "
+          >
+            See The New
+          </button>
+        </div>
+      </div>
+      <!-- ========start modal================= -->
+      <ng-template style="width: 100%" #template>
+        <div class="modal-header text-center">
+          <h4
+            class="modal-title"
+            style="width: 9cm; margin: auto; color: #e81c2a"
+          >
+            {{ new.title | uppercase }}
+          </h4>
+          <button
+            type="button"
+            class="close btn-close pull-right"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <img
+              class="project-image"
+              [src]="new.image[0]?.asset?.url"
+              alt=""
+            />
+            <div class="description">
+              <p>
+                {{ new.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <!-- ====================end modal=============== -->
+    </ng-template>
+  </p-carousel>
+</div>
+<!-- ========================== -->
+<!-- <carousel
     [itemsPerSlide]="slidesNumber"
     [singleSlideOffset]="singleSlideOffset"
     [startFromIndex]="6"
     [interval]="3000"
+    [noWrap]="false"
   >
     <slide *ngFor="let new of data; let index = index">
       <div class="swiper-slide">
@@ -13,7 +90,7 @@
           <div class="carousel-caption"></div>
           <div class="card-body">
             <p class="card-text text-center fw-bold">
-              {{ new.description.en | uppercase }}
+              {{ new.description | uppercase }}
             </p>
             <button
               type="button"
@@ -29,45 +106,9 @@
               See The New
             </button>
 
-            <!-- ========start modal================= -->
-            <ng-template style="width: 100%" #template>
-              <div class="modal-header text-center">
-                <h4
-                  class="modal-title"
-                  style="width: 9cm; margin: auto; color: #e81c2a"
-                >
-                  {{ new.description.en | uppercase }}
-                </h4>
-                <button
-                  type="button"
-                  class="close btn-close pull-right"
-                  aria-label="Close"
-                  (click)="modalRef?.hide()"
-                >
-                  <span aria-hidden="true" class="visually-hidden"
-                    >&times;</span
-                  >
-                </button>
-              </div>
-              <div class="modal-body">
-                <div>
-                  <img
-                    class="project-image"
-                    [src]="new.image[0]?.asset?.url"
-                    alt=""
-                  />
-                  <div class="description">
-                    <p>
-                      {{ new.description.en }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-            <!-- ====================end modal=============== -->
+
           </div>
         </div>
       </div>
     </slide>
-  </carousel>
-</ng-container>
+  </carousel> -->

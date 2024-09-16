@@ -6,6 +6,7 @@ import {
   ChangeDetectorRef,
   TemplateRef,
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { SanityService } from 'src/app/services/sanity.service';
 
@@ -18,18 +19,47 @@ import { SanityService } from 'src/app/services/sanity.service';
 export class NewsComponent implements OnInit {
   modalRef?: BsModalRef;
   data: any[] = [];
-  itemsPerSlide!: number;
-  slidesNumber!: number;
-  showCarousel = true; // Add this flag to control the visibility of the carousel
-
-  singleSlideOffset = true;
+  currentLang: string = 'en'; // Default language
+  responsiveOptions: any[] | undefined;
+  // ==================================on init===================
   ngOnInit(): void {
-    this.checkScreenSize(window.innerWidth);
+    this.currentLang = this.translate.currentLang || 'en'; // Set current language
+    this.fetchDataFromSanity();
+    this.responsiveOptions = [
+      {
+        breakpoint: '1400px',
+        numVisible: 4,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '1199px',
+        numVisible: 3,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
+  }
+  fetchDataFromSanity() {
     this.sanity
       .fetchNewsData()
       .then((fetchedData: any) => {
         if (fetchedData && fetchedData.length > 0) {
-          this.data = fetchedData;
+          // Map the data based on the current language
+          this.data = fetchedData.map((item: any) => ({
+            ...item,
+            title: item.title[this.currentLang], // Use the correct language for title
+            description: item.description[this.currentLang], // Use the correct language for description
+          }));
+          console.log(this.data);
         } else {
           console.error('No data received from fetchNewsData');
         }
@@ -38,39 +68,19 @@ export class NewsComponent implements OnInit {
         console.error('Error fetching news data:', error);
       });
   }
-
+  // ==================================on init===================
   constructor(
     private sanity: SanityService,
-    private cdr: ChangeDetectorRef,
-    private modalService: BsModalService
-  ) {}
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.checkScreenSize(event.target.innerWidth);
+    private modalService: BsModalService,
+    private translate: TranslateService
+  ) {
+    // Subscribe to language changes
+    this.translate.onLangChange.subscribe((event) => {
+      this.currentLang = event.lang;
+      this.fetchDataFromSanity(); // Fetch data again when language changes
+    });
   }
 
-  checkScreenSize(width: number) {
-    if (width > 1000) {
-      this.itemsPerSlide = 4;
-    } else if (width <= 1000 && width > 800) {
-      this.itemsPerSlide = 3;
-    } else if (width <= 800 && width > 600) {
-      this.itemsPerSlide = 2;
-    } else this.itemsPerSlide = 1;
-
-    this.sendItemsPerSlide();
-  }
-
-  sendItemsPerSlide() {
-    this.slidesNumber = this.itemsPerSlide;
-
-    // Temporarily hide the carousel and then show it again to force re-render
-    this.showCarousel = false;
-    this.cdr.detectChanges(); // Ensure Angular processes this change
-    this.showCarousel = true;
-    this.cdr.detectChanges(); // Trigger change detection again
-  }
   // =================modal function
   openModalWithClass(template: TemplateRef<void>) {
     this.modalRef = this.modalService.show(

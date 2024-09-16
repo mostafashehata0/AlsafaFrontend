@@ -3,10 +3,10 @@
   <h3
     style="
       position: relative;
-      bottom: 250px;
+      bottom: 50%;
       font-size: 56px;
       color: white;
-      z-index: 9999999;
+      z-index: 9;
     "
   >
     ALSAFA ADVANCED SYSTEM
@@ -38,8 +38,9 @@
   </carousel>
 </div>
 <!-- ===============End landing section=============== -->
+
 <!-- ============start our projects================ -->
-<ng-container *ngIf="showCarousel">
+<!-- <ng-container *ngIf="showCarousel">
   <h2 style="position: relative; top: 130px; text-align: center">
     Our Projects
   </h2>
@@ -75,5 +76,151 @@
       </div>
     </slide>
   </carousel>
-</ng-container>
+</ng-container> -->
 <!-- ============End our projects================ -->
+
+<h2 style="text-align: center; margin-top: 30px">Our Projects</h2>
+<!-- <div class="father-of-swiper">
+  <div class="swiper-group mt-4">
+
+
+    <div class="flipeffect-swiper" style="width: 18%">
+      <swiper-container
+        effect="flip"
+        grab-cursor="true"
+        centered-slides="true"
+        spaceBetween="10"
+        slides-per-view="auto"
+        pagination="false"
+        autoplay-delay="10000"
+        loop="true"
+        limitRotation="true"
+        slideShadows="true"
+      >
+        <swiper-slide
+          ><img src="assets/alsafa advanced .jpg" alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img src="assets/Fiber-11-17-21.jpg" alt=""
+        /></swiper-slide>
+      </swiper-container>
+    </div>
+
+    <div class="flipeffect-swiper" style="width: 18%">
+      <swiper-container
+        effect="flip"
+        grab-cursor="true"
+        centered-slides="true"
+        spaceBetween="10"
+        slides-per-view="auto"
+        pagination="false"
+        autoplay-delay="10000"
+        loop="true"
+        limitRotation="true"
+        slideShadows="true"
+      >
+        <swiper-slide
+          ><img src="assets/alsafa advanced .jpg" alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img src="assets/Fiber-11-17-21.jpg" alt=""
+        /></swiper-slide>
+      </swiper-container>
+    </div>
+
+    <div class="flipeffect-swiper" style="width: 18%">
+      <swiper-container
+        effect="flip"
+        grab-cursor="true"
+        centered-slides="true"
+        spaceBetween="10"
+        slides-per-view="auto"
+        pagination="false"
+        autoplay-delay="10000"
+        loop="true"
+        limitRotation="true"
+        slideShadows="true"
+      >
+        <swiper-slide
+          ><img src="assets/alsafa advanced .jpg" alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img src="assets/Fiber-11-17-21.jpg" alt=""
+        /></swiper-slide>
+      </swiper-container>
+    </div>
+
+    <div class="flipeffect-swiper" style="width: 18%">
+      <swiper-container
+        effect="flip"
+        grab-cursor="true"
+        centered-slides="true"
+        spaceBetween="10"
+        slides-per-view="auto"
+        pagination="false"
+        autoplay-delay="10000"
+        loop="true"
+        limitRotation="true"
+        slideShadows="true"
+      >
+        <swiper-slide
+          ><img src="assets/alsafa advanced .jpg" alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img src="assets/Fiber-11-17-21.jpg" alt=""
+        /></swiper-slide>
+      </swiper-container>
+    </div>
+
+    <div class="flipeffect-swiper" style="width: 18%">
+      <swiper-container
+        effect="flip"
+        grab-cursor="true"
+        centered-slides="true"
+        spaceBetween="10"
+        slides-per-view="auto"
+        pagination="false"
+        autoplay-delay="10000"
+        loop="true"
+        limitRotation="true"
+        slideShadows="true"
+      >
+        <swiper-slide
+          ><img src="assets/alsafa advanced .jpg" alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img src="assets/Fiber-11-17-21.jpg" alt=""
+        /></swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+</div> -->
+
+<!-- ============================ -->
+<div style="position: relative; top: 150px">
+  <p-carousel
+    [value]="products"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+    [autoplayInterval]="3000"
+  >
+    <ng-template let-photo pTemplate="item">
+      <div
+        class="border-1 surface-border border-round m-2 text-center py-5 px-3"
+      >
+        <div class="mb-3">
+          <img
+            [src]="photo.src"
+            [alt]="'No description available'"
+            class="w-6 shadow-2"
+          />
+        </div>
+        <div>
+          <h4 class="mb-1">{{ photo.info }}</h4>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

@@ -1,6 +1,8 @@
 <div style="background-color: rgb(224, 219, 219)">
-  <app-navbar></app-navbar>
+  <app-navbar [dir]="'dir' | translate"></app-navbar>
 
-  <router-outlet></router-outlet>
-  <app-footer style="position: relative; top: 170px"></app-footer>
+  <router-outlet [dir]="'dir' | translate"></router-outlet>
+
+  <app-footer style="position: relative; top: 170px" [dir]="'dir' | translate">
+  </app-footer>
 </div>

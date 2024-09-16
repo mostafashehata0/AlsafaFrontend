@@ -20,7 +20,15 @@ import { ConstructionComponent } from './component/construction/construction.com
 import { ElectrictyComponent } from './component/electricty/electricty.component';
 import { DirecianaDrillingComponent } from './component/direciana-drilling/direciana-drilling.component';
 import { LnfrastrctureComponent } from './component/lnfrastrcture/lnfrastrcture.component';
-// export function HttpLoaderFactory(http:HttpClient)
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { CarsualComponent } from './component/carsual/carsual.component';
+import { ButtonModule } from 'primeng/button';
+import { CarouselModule as PrimngCarouselModule } from 'primeng/carousel';
+import { BrowserAnimationsModule as PrimngBrowserAnimationsModule } from '@angular/platform-browser/animations';
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -38,6 +46,7 @@ import { LnfrastrctureComponent } from './component/lnfrastrcture/lnfrastrcture.
     ElectrictyComponent,
     DirecianaDrillingComponent,
     LnfrastrctureComponent,
+    CarsualComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +55,16 @@ import { LnfrastrctureComponent } from './component/lnfrastrcture/lnfrastrcture.
     CarouselModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    ButtonModule,
+    PrimngCarouselModule,
+    PrimngBrowserAnimationsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
   providers: [BsModalService],
