@@ -13,7 +13,7 @@
   align-items: center;
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
-  margin-right: 15px;
+  margin-inline-end: 15px;
   background-color: #e81c2a;
   padding: 10px;
 }

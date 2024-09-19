@@ -130,6 +130,10 @@ carousel .swiper-wrapper {
   width: 265px;
   height: 290px;
   border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 @media (max-width: 600px) {
   #pn_id_1 > div > div > div > div > div div div.mb-3 > img {

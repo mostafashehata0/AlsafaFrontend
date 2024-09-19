@@ -4,11 +4,11 @@
 }
 .container-fluid a img {
   width: 130px;
-  border-radius: 45%;
-  -webkit-border-radius: 45%;
-  -moz-border-radius: 45%;
-  -ms-border-radius: 45%;
-  -o-border-radius: 45%;
+  border-radius: 15%;
+  -webkit-border-radius: 15%;
+  -moz-border-radius: 15%;
+  -ms-border-radius: 15%;
+  -o-border-radius: 15%;
 }
 @media (max-width: 400px) {
   .container-fluid a img {
@@ -52,4 +52,16 @@
 
 .not-homepage {
   background-color: #252525c7;
+}
+
+.collapse.navbar-nav {
+  margin-inline-end: 40px;
+  margin-left: auto;
+}
+@media (max-width: 988px) {
+  .collapse.navbar-collapse ul {
+    margin-inline-end: 0;
+    margin-left: 0;
+    padding-inline-start: 0;
+  }
 }

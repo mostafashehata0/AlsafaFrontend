@@ -197,14 +197,14 @@
 </div> -->
 
 <!-- ============================ -->
-<div style="position: relative; top: 150px">
+<div style="position: relative; top: 15px">
   <p-carousel
     [value]="products"
     [numVisible]="3"
     [numScroll]="3"
     [circular]="true"
     [responsiveOptions]="responsiveOptions"
-    [autoplayInterval]="3000"
+    [autoplayInterval]="4500"
   >
     <ng-template let-photo pTemplate="item">
       <div
@@ -215,6 +215,7 @@
             [src]="photo.src"
             [alt]="'No description available'"
             class="w-6 shadow-2"
+            style="width: 250px; height: 260px"
           />
         </div>
         <div>

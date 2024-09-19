@@ -22,7 +22,7 @@ import { DirecianaDrillingComponent } from './component/direciana-drilling/direc
 import { LnfrastrctureComponent } from './component/lnfrastrcture/lnfrastrcture.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { CarsualComponent } from './component/carsual/carsual.component';
+
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule as PrimngCarouselModule } from 'primeng/carousel';
 import { BrowserAnimationsModule as PrimngBrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,7 +46,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     ElectrictyComponent,
     DirecianaDrillingComponent,
     LnfrastrctureComponent,
-    CarsualComponent,
   ],
   imports: [
     BrowserModule,

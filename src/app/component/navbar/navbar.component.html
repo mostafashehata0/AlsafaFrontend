@@ -4,8 +4,6 @@
     class="navbar fixed-top navbar-expand-lg navbar-light not-homepage"
   >
     <div class="container-fluid">
-      <!-- <button (click)="switchLanguge('en')">English</button>
-      <button (click)="switchLanguge('ar')">Arabic</button> -->
       <a class="navbar-brand" href="#">
         <img
           src="assets/صورة واتساب بتاريخ 2024-08-28 في 05.22.42_25469ef4.jpg"
@@ -13,7 +11,7 @@
         />
         <span style="color: #e81c2a; margin-inline-start: 10px">AL</span>
         <span style="color: white">SA</span>
-        <span style="color: #e81c2a">FA</span>
+        <span style="color: #e81c2a; margin-inline-start: 10px">FA</span>
       </a>
       <button
         class="navbar-toggler"
@@ -28,7 +26,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto me-5">
+        <ul class="navbar-nav me-auto ms-auto">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/home"
               >Home</a
@@ -45,6 +43,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/contact">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <button (click)="switchLanguge('en')">English</button>
+              <button (click)="switchLanguge('ar')">Arabic</button></a
+            >
           </li>
         </ul>
       </div>

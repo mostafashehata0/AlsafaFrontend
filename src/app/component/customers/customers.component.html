@@ -1,39 +1,29 @@
-<ng-container *ngIf="showCarousel">
-  <h2
-    style="position: relative; top: 130px; text-align: center; margin-top: 50px"
+<div style="position: relative; top: 150px">
+  <h2 style="text-align: center; margin-top: 20px">Partners</h2>
+  <p-carousel
+    [value]="data"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+    [autoplayInterval]="4500"
   >
-    Partners
-  </h2>
-  <carousel
-    class="project-section"
-    [itemsPerSlide]="slidesNumber"
-    [singleSlideOffset]="singleSlideOffset"
-    [startFromIndex]="1"
-    [interval]="3000"
-  >
-    <slide *ngFor="let partner of data; let index = index">
-      <div class="swiper-slide">
-        <div class="card">
-          <img src="{{ partner.image[0].asset.url }}" alt="image slide" />
-          <div class="carousel-caption"></div>
-          <!-- <div class="card-body">
-            <p class="card-text text-center fw-bold">our project</p>
-            <button
-              type="button"
-              class="btn"
-              style="
-                background-color: #e81c2a;
-                color: white;
-                display: block;
-                margin: auto;
-                padding: 10px;
-              "
-            >
-              See The New
-            </button>
-          </div> -->
+    <ng-template let-partner pTemplate="item">
+      <div
+        class="border-1 surface-border border-round m-2 text-center py-5 px-3"
+      >
+        <div class="mb-3">
+          <img
+            [src]="partner.image[0].asset.url"
+            [alt]="'No description available'"
+            class="w-6 shadow-2"
+            style="width: 250px; height: 260px"
+          />
+        </div>
+        <div>
+          <h4 class="mb-1">{{ partner.title }}</h4>
         </div>
       </div>
-    </slide>
-  </carousel>
-</ng-container>
+    </ng-template>
+  </p-carousel>
+</div>
