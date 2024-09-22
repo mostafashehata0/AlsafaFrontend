@@ -25,7 +25,6 @@ export class CustomersComponent {
 
   constructor(private sanity: SanityService, private cdr: ChangeDetectorRef) {}
   ngOnInit(): void {
-    this.checkScreenSize(window.innerWidth);
     // Fetch the fetchClientsData
     this.sanity
       .fetchClientsData()
@@ -56,32 +55,5 @@ export class CustomersComponent {
         numScroll: 1,
       },
     ];
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.checkScreenSize(event.target.innerWidth);
-  }
-
-  checkScreenSize(width: number) {
-    if (width > 1000) {
-      this.itemsPerSlide = 4;
-    } else if (width <= 1000 && width > 800) {
-      this.itemsPerSlide = 3;
-    } else if (width <= 800 && width > 600) {
-      this.itemsPerSlide = 2;
-    } else this.itemsPerSlide = 1;
-
-    this.sendItemsPerSlide();
-  }
-
-  sendItemsPerSlide() {
-    this.slidesNumber = this.itemsPerSlide;
-
-    // Temporarily hide the carousel and then show it again to force re-render
-    this.showCarousel = false;
-    this.cdr.detectChanges(); // Ensure Angular processes this change
-    this.showCarousel = true;
-    this.cdr.detectChanges(); // Trigger change detection again
   }
 }
