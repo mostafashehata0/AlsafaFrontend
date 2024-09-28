@@ -22,7 +22,9 @@ import { DirecianaDrillingComponent } from './component/direciana-drilling/direc
 import { LnfrastrctureComponent } from './component/lnfrastrcture/lnfrastrcture.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-
+import { RouterModule, Routes, Router, Scroll } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
+import { filter } from 'rxjs/operators';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule as PrimngCarouselModule } from 'primeng/carousel';
 import { BrowserAnimationsModule as PrimngBrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,6 +32,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
+const routes: Routes = [
+  // Your routes here
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,9 +69,30 @@ export function HttpLoaderFactory(http: HttpClient) {
     ButtonModule,
     PrimngCarouselModule,
     PrimngBrowserAnimationsModule,
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled', // This will scroll to top on navigation
+    }),
   ],
+  exports: [RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
   providers: [BsModalService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(router: Router, viewportScroller: ViewportScroller) {
+    router.events
+      .pipe(filter((e): e is Scroll => e instanceof Scroll))
+      .subscribe((e) => {
+        if (e.position) {
+          // Backward navigation, so restore the scroll position
+          viewportScroller.scrollToPosition(e.position);
+        } else if (e.anchor) {
+          // Anchor navigation, so scroll to the anchor
+          viewportScroller.scrollToAnchor(e.anchor);
+        } else {
+          // Forward navigation, so scroll to top
+          viewportScroller.scrollToPosition([0, 0]);
+        }
+      });
+  }
+}
