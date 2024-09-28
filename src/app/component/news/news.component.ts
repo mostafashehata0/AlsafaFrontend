@@ -59,7 +59,6 @@ export class NewsComponent implements OnInit {
             title: item.title[this.currentLang], // Use the correct language for title
             description: item.description[this.currentLang], // Use the correct language for description
           }));
-          console.log(this.data);
         } else {
           console.error('No data received from fetchNewsData');
         }

@@ -41,8 +41,6 @@ export class HomeComponent {
 
   responsiveOptions: any[] | undefined;
   ngOnInit() {
-    console.log(this.products);
-
     this.responsiveOptions = [
       {
         breakpoint: '1199px',
