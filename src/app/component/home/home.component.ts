@@ -23,19 +23,26 @@ export class HomeComponent {
   singleSlideOffset = true;
 
   products: any[] = [
-    { src: '/assets/images.jpeg', info: 'construction' },
-    { src: '/assets/Telecom2_2000x1000.png', info: 'Telecommunication' },
+    { src: '/assets/images.jpeg', info: 'construction', route: 'construction' },
+    {
+      src: '/assets/Telecom2_2000x1000.png',
+      info: 'Telecommunication',
+      route: 'tele',
+    },
     {
       src: '/assets/picture1.jpg',
       info: 'Electricty and Alectromechanis',
+      route: 'electricty',
     },
     {
       src: '/assets/High-Density-Polyethylene-HDPE-Trenchless-Pipes-For-HDDHorizontal-Directional-Drilling-6.jpg',
       info: 'HDD (Direciana Drilling)',
+      route: 'direciana',
     },
     {
       src: '/assets/infrastructure_montage_shutterstock.jpg',
       info: 'Lnfrastrcture',
+      route: 'lnfrastrucre',
     },
   ];
 

@@ -211,12 +211,14 @@
         class="border-1 surface-border border-round m-2 text-center py-5 px-3"
       >
         <div class="mb-3">
-          <img
-            [src]="photo.src"
-            [alt]="'No description available'"
-            class="w-6 shadow-2"
-            style="width: 250px; height: 260px"
-          />
+          <a routerLink="/{{ photo.route }}">
+            <img
+              [src]="photo.src"
+              [alt]="'No description available'"
+              class="w-6 shadow-2"
+              style="width: 250px; height: 260px"
+            />
+          </a>
         </div>
         <div>
           <h4 class="mb-1">{{ photo.info }}</h4>
