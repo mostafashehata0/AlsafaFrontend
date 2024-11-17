@@ -1,17 +1,21 @@
 .modal-body div {
   display: grid;
-  grid-template-columns: 8fr 4fr;
+  /* grid-template-columns: 8fr 4fr; */
   gap: 10px;
   align-items: center;
 }
 .project-image {
-  width: 500px;
-  height: 550px;
+  width: 450px;
+  height: 500px;
+  margin: auto;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+.modal-body div p {
+  padding: 8px;
 }
 @media (max-width: 1000px) {
   .modal-body div {
@@ -24,7 +28,7 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  .modal-body div p {
+  .modal-body .description {
     margin-top: 10px;
   }
 }

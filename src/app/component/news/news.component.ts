@@ -47,6 +47,7 @@ export class NewsComponent implements OnInit {
         numScroll: 1,
       },
     ];
+    console.log(this.data);
   }
   fetchDataFromSanity() {
     this.sanity
