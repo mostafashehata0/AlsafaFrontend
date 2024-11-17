@@ -35,7 +35,7 @@ export class HomeComponent {
       route: 'electricty',
     },
     {
-      src: '/assets/High-Density-Polyethylene-HDPE-Trenchless-Pipes-For-HDDHorizontal-Directional-Drilling-6.jpg',
+      src: 'assets/compact-hdd-gdrill-5x.jpg',
       info: 'HDD (Direciana Drilling)',
       route: 'direciana',
     },
