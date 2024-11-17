@@ -104,7 +104,8 @@
 }
 
 @media (max-width: 600px) {
-  section .our-team {
-    margin-inline-start: 20px;
+  section .our-team .team-member {
+    margin-inline-start: 40px;
+    padding: 0;
   }
 }
