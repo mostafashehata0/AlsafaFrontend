@@ -35,7 +35,7 @@ export class HomeComponent {
       route: 'electricty',
     },
     {
-      src: 'assets/compact-hdd-gdrill-5x.jpg',
+      src: 'assets/1520144378905.jpeg',
       info: 'HDD (Direciana Drilling)',
       route: 'direciana',
     },
